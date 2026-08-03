@@ -4,3 +4,5 @@ node_modules/
 next-dev.out.log
 next-dev.err.log
 .env*.local
+#Next.js development logs
+next-dev*.log
