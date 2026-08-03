@@ -7,4 +7,4 @@ import { Process } from "@/components/Process";
 import { IntroLoader } from "@/components/IntroLoader";
 import { ScrollNavigator } from "@/components/ScrollNavigator";
 
-export default function Home() { return <><Header /><IntroLoader><main className="px-3 pt-24 sm:px-6"><Hero /><Problem /><Benefits /><Process /><CTAForm /><ScrollNavigator /></main></IntroLoader></>; }
+export default function Home() { return <><Header /><IntroLoader><main className="px-3 pt-16 sm:px-6 sm:pt-24"><Hero /><Problem /><Benefits /><Process /><CTAForm /><ScrollNavigator /></main></IntroLoader></>; }
