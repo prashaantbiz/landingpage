@@ -10,15 +10,15 @@ export function CTAForm() {
 
         <div className="text-center">
           <p className="eyebrow">
-            One-to-one consultation
+            Fill out the form below
           </p>
 
           <h2 className="section-title mt-5">
-            Customized strategy for <span>your business.</span>
+            Free 1:1 <span>Strategy Call.</span>
           </h2>
 
           <p className="mt-4 text-zinc-300">
-            Fill out the form below to book your free consultation.
+            Limited Seats
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export function CTAForm() {
             className="w-full max-w-xl rounded-2xl"
             style={{
               border: "none",
-              height: "850px",
+              height: "560px",
               backgroundColor: "transparent",
             }}
             loading="lazy"
