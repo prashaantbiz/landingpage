@@ -1,16 +1,42 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
-
-type Values = { name: string; email: string; whatsapp: string; business: string; message: string };
-const emptyValues: Values = { name: "", email: "", whatsapp: "", business: "", message: "" };
-
 export function CTAForm() {
-  const router = useRouter(); const [values, setValues] = useState<Values>(emptyValues); const [errors, setErrors] = useState<Partial<Values>>({});
-  const validate = () => { const next: Partial<Values> = {}; if (!values.name.trim()) next.name = "Please enter your full name."; if (!/^\S+@\S+\.\S+$/.test(values.email)) next.email = "Enter a valid active email."; if (!values.whatsapp.trim()) next.whatsapp = "Please enter your WhatsApp number."; if (!values.business.trim()) next.business = "Please enter your business name."; return next; };
-  const submit = (event: FormEvent) => { event.preventDefault(); const next = validate(); setErrors(next); if (!Object.keys(next).length) router.push("/thank-you"); };
-  const update = (field: keyof Values, value: string) => { setValues({ ...values, [field]: value }); if (errors[field]) setErrors({ ...errors, [field]: undefined }); };
-  const fields: { field: keyof Values; label: string; placeholder: string; type?: string; required?: boolean }[] = [{ field: "name", label: "Full Name", placeholder: "Enter your full name", required: true }, { field: "email", label: "Active Email", placeholder: "you@clinic.com", type: "email", required: true }, { field: "whatsapp", label: "WhatsApp Number", placeholder: "Enter your WhatsApp number", type: "tel", required: true }, { field: "business", label: "Business Name", placeholder: "Enter your clinic name", required: true }];
-  return <section id="consultation-form" className="scroll-mt-8 px-5 py-16 sm:py-24"><div className="mx-auto max-w-2xl rounded-[2rem] border border-accent/30 bg-gradient-to-b from-accent/[.11] to-white/[.035] p-6 shadow-glow sm:p-10"><div className="text-center"><p className="eyebrow">One-to-one consultation</p><h2 className="section-title mt-5">Customized strategy for <span>your business.</span></h2><p className="mt-4 text-zinc-300">Fill out the form</p></div><form noValidate onSubmit={submit} className="mt-9 space-y-5">{fields.map(({ field, label, placeholder, type = "text", required }) => <div key={field}><label htmlFor={field} className="mb-2 block text-sm font-bold text-white">{label}</label><input id={field} name={field} type={type} required={required} value={values[field]} onChange={(e) => update(field, e.target.value)} placeholder={placeholder} aria-invalid={Boolean(errors[field])} aria-describedby={errors[field] ? `${field}-error` : undefined} className="form-input" />{errors[field] && <p id={`${field}-error`} className="mt-2 text-sm text-red-300">{errors[field]}</p>}</div>)}<div><label htmlFor="message" className="mb-2 block text-sm font-bold text-white">Anything You Want to Say <span className="font-normal text-zinc-400">(optional)</span></label><textarea id="message" name="message" value={values.message} onChange={(e) => update("message", e.target.value)} placeholder="Tell us anything you'd like us to know" rows={4} className="form-input resize-y" /></div><button className="cta-button mt-2 w-full" type="submit">Book the Call <span aria-hidden>→</span></button><p className="text-center text-sm text-zinc-400">We respect your privacy. No spam.</p></form></div></section>;
+  return (
+    <section
+      id="consultation-form"
+      className="scroll-mt-8 px-5 py-16 sm:py-24"
+    >
+      <div className="mx-auto max-w-2xl rounded-[2rem] border border-accent/30 bg-gradient-to-b from-accent/[.11] to-white/[.035] p-6 shadow-glow sm:p-10">
+
+        <div className="text-center">
+          <p className="eyebrow">
+            One-to-one consultation
+          </p>
+
+          <h2 className="section-title mt-5">
+            Customized strategy for <span>your business.</span>
+          </h2>
+
+          <p className="mt-4 text-zinc-300">
+            Fill out the form below to book your free consultation.
+          </p>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <iframe
+            src="https://7f6523a8.sibforms.com/v2/serve/MUIFAH2wv7x1aMFXO1zS5ABFL8z6mp5f98gRwfIy7nUjygac_XA-HHaKx27s6rBsMbBEaSFDuiZWdPyONeiyhrOO0wlc5C0f-DflSa-i-ChILseI5kVxa8-pUE8NyiBLDEKS8DTWWntHmyU6lwGjNqRChnbPEjCuCQ4xvfNHhd6P4U3jKxgdtL5nXsd2s7uG-eLdfiHko6j4ID9IMQ=="
+            title="Book Your Free Consultation"
+            className="w-full max-w-xl rounded-2xl"
+            style={{
+              border: "none",
+              height: "850px",
+              backgroundColor: "transparent",
+            }}
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </section>
+  );
 }
