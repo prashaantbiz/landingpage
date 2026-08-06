@@ -39,4 +39,8 @@ body { background-color: #050505; background-image: radial-gradient(ellipse 70% 
 .form-input { width: 100%; border: 1px solid rgba(255,255,255,.16); border-radius: .85rem; background: rgba(0,0,0,.28); color: #fff; font-size: 1rem; line-height: 1.5; padding: .92rem 1rem; transition: border-color .2s ease, background .2s ease; }
 .form-input::placeholder { color: #858585; }
 .form-input:hover, .form-input:focus { border-color: rgba(200,255,0,.65); background: rgba(0,0,0,.4); outline: none; }
+.form-section { background: radial-gradient(ellipse 58% 42% at 8% 45%, rgba(200,255,0,.12), transparent 72%), radial-gradient(ellipse 48% 38% at 95% 70%, rgba(211,254,0,.1), transparent 74%); }
+.form-aura { position: absolute; z-index: -1; width: 28rem; height: 28rem; border-radius: 999px; background: #c8ff00; filter: blur(155px); opacity: .07; }.form-aura-left { left: -15rem; top: 10%; }.form-aura-right { right: -14rem; bottom: -8rem; }
+.brevo-frame-shell { display: flex; justify-content: center; min-height: 760px; overflow: hidden; border: 1px solid rgba(255,255,255,.2); border-radius: 24px; background: rgba(0,0,0,.22); }.brevo-frame { display: block; width: 100%; max-width: 540px; height: 760px; border: 0; background: transparent; }
+@media (max-width: 639px) { .form-section { padding-left: 12px; padding-right: 12px; }.brevo-frame-shell { min-height: 880px; border-radius: 20px; }.brevo-frame { height: 880px; }.form-aura-left { left: -20rem; }.form-aura-right { right: -20rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }

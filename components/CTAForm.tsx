@@ -1,32 +1,10 @@
-"use client";
-export function CTAForm() {
-  return (
-    <section
-      id="consultation-form"
-      className="scroll-mt-8 px-5 py-16 sm:py-24"
-    >
-      <div className="mx-auto max-w-2xl rounded-[2rem] border border-accent/30 bg-gradient-to-b from-accent/[.11] to-white/[.035] p-6 shadow-glow sm:p-10">
-        <div className="text-center">
-          <p className="eyebrow">
-            Fill out the form below
-          </p>
-          <h2 className="section-title mt-5 text-2xl sm:text-4xl md:text-5xl whitespace-nowrap">
-            Free 1:1 <span>Strategy Call.</span>
-          </h2>
-          <p className="mt-4 text-zinc-300">
-            Limited Seats
-          </p>
-        </div>
-        <div className="mt-4 flex justify-center">
           <iframe
-            src="https://7f6523a8.sibforms.com/v2/serve/MUIFAH2wv7x1aMFXO1zS5ABFL8z6mp5f98gRwfIy7nUjygac_XA-HHaKx27s6rBsMbBEaSFDuiZWdPyONeiyhrOO0wlc5C0f-DflSa-i-ChILseI5kVxa8-pUE8NyiBLDEKS8DTWWntHmyU6lwGjNqRChnbPEjCuCQ4xvfNHhd6P4U3jKxgdtL5nXsd2s7uG-eLdfiHko6j4ID9IMQ=="
-            title="Book Your Free Consultation"
-            className="w-full max-w-xl rounded-2xl h-[620px] sm:h-[560px]"
-            style={{
-              border: "none",
-              backgroundColor: "transparent",
-            }}
-            loading="lazy"
+            title="Free 1:1 Strategy Call"
+            src="https://7f6523a8.sibforms.com/v2/serve/MUIFAMcqUXGvMn2jGxjoMjse65JhmEjJijqE7gF_u63dKDO6-g061trFly-dWlDCmBK2b8krw-IohrPkaunz1lNotF9HTHiAQhRKkxDcVUmmFwGLDD3zohbd1buCLn5mnOl746rwnvSMGJsLwcQ1kmhr526abZGjdqAh5FDtzdazWHEPtdjZp2gMJ7T_onchlXlxvNAFkOVQnhi1SA=="
+            className="brevo-frame"
+            frameBorder="0"
+            scrolling="auto"
+            allowFullScreen
           />
         </div>
       </div>
